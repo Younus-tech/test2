@@ -1,0 +1,24 @@
+<div class="container bordered">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <span style="float: right;" ><button class="btn btn-primary" routerLink="/add-student">Add Student</button></span>
+            <table style="width: 100%;margin-top:15px;" class="table-bordered">
+                <tr>
+                    <td style="text-align: center;">Id</td>
+                    <td style="text-align: center;">First Name</td>
+                    <td style="text-align: center;">Last Name</td>
+                    <td style="text-align: center;">Email</td>
+                    <td style="text-align: center;" colspan="2">Action</td>
+                </tr>
+                <!-- <h2>{{displayData | json}}</h2> -->
+                <tr *ngFor="let stu of displayData;let i=index">
+                    <td style="text-align: center;">{{i+1}}</td>
+                    <td style="text-align: center;">{{stu.firstname}}</td>
+                    <td style="text-align: center;">{{stu.lastname}}</td>
+                    <td style="text-align: center;">{{stu.email}}</td>
+                    <td style="text-align: center;"><button class="btn btn-info" [routerLink]="['/update-student',stu.id]">Edit</button> | <button class="btn btn-danger" (click)="deleteStu(stu.id)">Delete</button></td>
+                </tr>
+            </table>
+        <!-- </div>[routerLink]="['/update-student',stu.id]" -->
+    </div>
+</div>

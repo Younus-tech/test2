@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row justify-content-center" style="margin-top:20px;">
+        <div class="col-md-6 ">
+            <div>
+                <form #addstudent="ngForm" (ngSubmit)="addstu(addstudent)">
+                    <div class="form-group">
+                        <label for="fname">First Name</label>
+                        <input class="form-control" type="text" id="fname" ngModel name="fname" #fname="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="addstudent.submitted && fname.invalid">Please Enter Your Firstname</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input class="form-control" type="text" id="lname" ngModel name="lname" #lname="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="addstudent.submitted && lname.invalid">Please Enter Your Lastname</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control" type="text" id="email" ngModel name="email" #email="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="addstudent.submitted && email.invalid">Please Enter Your Email</div>
+                    </div>
+                    <button class="btn btn-success">submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
